@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles, Grid } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -15,12 +16,14 @@ const Header = () => {
 		<Grid container className={classes.root}>
 			<Grid item>
 				<h1>
-					<Link to="/">Home</Link>
+					<Link to="/">Tienda</Link>
 				</h1>
 			</Grid>
 			<Grid item>
 				<h1>
-					<Link to="/Shopping">shopping</Link>
+					<Link to="/Shopping">
+						<ShoppingCartIcon />
+					</Link>
 				</h1>
 			</Grid>
 		</Grid>

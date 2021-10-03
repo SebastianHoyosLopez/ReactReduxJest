@@ -7,7 +7,10 @@ const useStyles = makeStyles((theme) => ({
 	root: {
 		display: 'flex',
 		flexDirection: 'column',
-		justifyContent: 'center'
+		justifyContent: 'space-between',
+	},
+	image: {
+		objectFit: "contain"
 	},
 	textDescriptionContainer: {
 		textAlign: 'center'
@@ -19,12 +22,13 @@ const Product = ({ textBotton, product, handleAction }) => {
 	return (
 		<Box
 			sx={{
-				width: 250,
-				margin: 10
+				width: 330,
+				margin: 2,
+				justifyContent: 'center'
 			}}
 		>
 			<Card className={classes.root}>
-				<CardMedia component="img" height="250" image={product.image} alt={product.title} />
+				<CardMedia component="img" height="230" image={product.image} alt={product.title} />
 				<CardContent className={classes.textDescriptionContainer}>
 					<Typography gutterBottom variant="h5" component="div">
 						{product.title}

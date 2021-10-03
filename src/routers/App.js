@@ -1,3 +1,4 @@
+import { Container } from '@material-ui/core';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Layout from '../components/layout/Layout';
 import Home from '../container/Home';
@@ -7,8 +8,10 @@ const App = () => (
 	<BrowserRouter>
 		<Layout>
 			<Switch>
-				<Route exact path="/" component={Home} />
-				<Route exact path="/Shopping" component={Shopping} />
+				<Container fixed>
+					<Route exact path="/" component={Home} />
+					<Route exact path="/Shopping" component={Shopping} />
+				</Container>
 			</Switch>
 		</Layout>
 	</BrowserRouter>

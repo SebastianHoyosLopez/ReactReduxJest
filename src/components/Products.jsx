@@ -7,8 +7,8 @@ import { add_to_cart } from '../redux/actions/index';
 const useStyles = makeStyles((theme) => ({
 	root: {
 		display: 'flex',
-		justifyContent: 'center'
-	}
+		justifyContent: 'center',
+	},
 }));
 
 const Products = (props) => {
@@ -21,8 +21,8 @@ const Products = (props) => {
 	return (
 		<Grid container className={classes.root}>
 			{products.map((product) => (
-				<Grid item sm={6} md={4} lg={4} key={product.id}>
-					<Product textBotton='agregar' product={product} handleAction={handleAddToCart} />
+				<Grid item sm={12} md={6} lg={4} key={product.id}>
+					<Product textBotton="agregar" product={product} handleAction={handleAddToCart} />
 				</Grid>
 			))}
 		</Grid>
@@ -36,7 +36,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = {
-	add_to_cart: add_to_cart,
+	add_to_cart: add_to_cart
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Products);

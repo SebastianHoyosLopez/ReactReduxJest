@@ -7,10 +7,10 @@ const useStyles = makeStyles((theme) => ({
 	root: {
 		display: 'flex',
 		flexDirection: 'column',
-		justifyContent: 'space-between',
+		justifyContent: 'space-between'
 	},
 	image: {
-		objectFit: "contain"
+		objectFit: 'contain'
 	},
 	textDescriptionContainer: {
 		textAlign: 'center'
@@ -36,9 +36,9 @@ const Product = ({ textBotton, product, handleAction }) => {
 					<Typography variant="body2">{product.description}</Typography>
 					<Typography variant="body2">{product.price}</Typography>
 				</CardContent>
-					<Button variant="contained" onClick={handleAction(product)}>
-						{textBotton}
-					</Button>
+				<Button variant="contained" onClick={handleAction(product)}>
+					{textBotton}
+				</Button>
 			</Card>
 		</Box>
 	);

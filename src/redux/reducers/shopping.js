@@ -4,7 +4,6 @@ import initialState from '../../initialState';
 const shopping = (state = initialState, action) => {
 	switch (action.type) {
 		case actionTypes.ADD_TO_CART:
-			let cart = state.cart;
 			return {
 				...state,
 				cart: [ ...state.cart, action.payload ]

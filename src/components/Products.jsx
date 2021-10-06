@@ -22,7 +22,7 @@ const Products = (props) => {
 		<Grid container className={classes.root}>
 			{products.map((product) => (
 				<Grid item sm={12} md={6} lg={4} key={product.id}>
-					<Product textBotton="agregar" product={product} handleAction={handleAddToCart} />
+					<Product textBotton="Agregar" product={product} handleAction={handleAddToCart} />
 				</Grid>
 			))}
 		</Grid>

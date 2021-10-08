@@ -21,8 +21,6 @@ const Cart = (props) => {
 		props.removeFromCart(product);
 	};
 
-	console.log(products);
-
 	return (
 		<Grid container className={classes.root}>
 			{products.map((product) => (

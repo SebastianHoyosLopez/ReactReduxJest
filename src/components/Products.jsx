@@ -7,8 +7,8 @@ import { add_to_cart } from '../redux/actions/index';
 const useStyles = makeStyles((theme) => ({
 	root: {
 		display: 'flex',
-		justifyContent: 'center',
-	},
+		justifyContent: 'center'
+	}
 }));
 
 const Products = (props) => {

@@ -1,7 +1,8 @@
 import React from 'react';
-import { makeStyles, Grid } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+import { makeStyles, Grid } from '@material-ui/core';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { useSelector } from 'react-redux';
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -11,6 +12,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Header = () => {
+	const countProducts = useSelector((state) => state.shopping.cart.length);
 	const classes = useStyles();
 	return (
 		<Grid container className={classes.root}>
@@ -23,6 +25,7 @@ const Header = () => {
 				<h1>
 					<Link to="/Shopping">
 						<ShoppingCartIcon />
+						{countProducts}
 					</Link>
 				</h1>
 			</Grid>

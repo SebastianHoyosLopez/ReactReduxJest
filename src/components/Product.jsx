@@ -1,6 +1,5 @@
 import React from 'react';
 import { Typography, makeStyles, Card, CardMedia, CardContent, Button } from '@material-ui/core';
-import { connect } from 'react-redux';
 import { Box } from '@mui/system';
 
 const useStyles = makeStyles((theme) => ({
@@ -35,6 +34,7 @@ const Product = ({ textBotton, product, handleAction }) => {
 					</Typography>
 					<Typography variant="body2">{product.description}</Typography>
 					<Typography variant="body2">{product.price}</Typography>
+					{product.quantity ? <Typography variant="body2">Cantidad: {product.quantity}</Typography> : null}
 				</CardContent>
 				<Button variant="contained" onClick={handleAction(product)}>
 					{textBotton}
@@ -44,4 +44,4 @@ const Product = ({ textBotton, product, handleAction }) => {
 	);
 };
 
-export default connect()(Product);
+export default Product;

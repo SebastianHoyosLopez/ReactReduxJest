@@ -2,7 +2,7 @@ import { Container } from '@material-ui/core';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Layout from '../components/layout/Layout';
 import Home from '../container/Home';
-import Shopping from '../container/shopping';
+import Shopping from '../container/Shopping';
 
 const App = () => (
 	<BrowserRouter>

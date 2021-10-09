@@ -1,6 +1,7 @@
 import React from 'react';
 import { Grid, Typography, makeStyles } from '@material-ui/core';
 import Cart from '../components/Cart';
+import Price from '../components/Price';
 
 const styles = makeStyles((theme) => ({
 	root: {
@@ -16,6 +17,7 @@ const shopping = () => {
 		<Grid container className={classes.root}>
 			<Grid item>
 				<Typography variant="h2">lista de pedidos</Typography>
+				<Price />
 			</Grid>
 			<Grid item>
 				<Cart />

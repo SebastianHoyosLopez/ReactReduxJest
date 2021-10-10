@@ -40,6 +40,8 @@ const shopping = (state = initialState, action) => {
 								quantity: product.quantity - 1,
 								priceTotal: product.priceTotal - product.price
 							};
+						} else {
+							return product;
 						}
 					})
 				};
@@ -49,6 +51,7 @@ const shopping = (state = initialState, action) => {
 					cart: state.cart.filter((item) => item.id !== action.payload.id)
 				};
 			}
+			return state;
 
 		default:
 			return state;

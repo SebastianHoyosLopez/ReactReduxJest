@@ -17,9 +17,9 @@ const shopping = () => {
 		<Grid container className={classes.root}>
 			<Grid item>
 				<Typography variant="h2">lista de pedidos</Typography>
-				<Price />
 			</Grid>
 			<Grid item>
+				<Price />
 				<Cart />
 			</Grid>
 		</Grid>

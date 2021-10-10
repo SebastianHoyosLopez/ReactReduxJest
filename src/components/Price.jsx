@@ -6,7 +6,7 @@ const price = (props) => {
 	const { products } = props;
 
 	const handleSumTotal = () => {
-		const reducer = (accumulator, currentValue) => accumulator + currentValue.price;
+		const reducer = (accumulator, currentValue) => accumulator + currentValue.priceTotal;
 		const sum = products.reduce(reducer, 0);
 		return sum;
 	};

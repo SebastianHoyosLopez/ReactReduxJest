@@ -51,7 +51,6 @@ const shopping = (state = initialState, action) => {
 					cart: state.cart.filter((item) => item.id !== action.payload.id)
 				};
 			}
-			return state;
 
 		default:
 			return state;

@@ -11,6 +11,7 @@ const App = () => (
 				<Container fixed>
 					<Route exact path="/" component={Home} />
 					<Route exact path="/Shopping" component={Shopping} />
+					<Route exact path="/ReactReduxJest" component={Shopping} />
 				</Container>
 			</Switch>
 		</Layout>

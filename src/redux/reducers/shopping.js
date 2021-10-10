@@ -13,7 +13,9 @@ const shopping = (state = initialState, action) => {
 						if (product.id === action.payload.id) {
 							return {
 								...product,
-								quantity: product.quantity + 1
+								quantity: product.quantity + 1,
+								price: action.payload.price,
+								priceTotal: product.price + product.priceTotal
 							};
 						} else {
 							return product;
@@ -23,14 +25,31 @@ const shopping = (state = initialState, action) => {
 			} else {
 				return {
 					...state,
-					cart: [ ...state.cart, { ...action.payload, quantity: 1 } ]
+					cart: [ ...state.cart, { ...action.payload, quantity: 1, priceTotal: action.payload.price } ]
 				};
 			}
 		case actionTypes.REMOVE_FROM_CART:
-			return {
-				...state,
-				cart: state.cart.filter((item) => item.id !== action.payload.id)
-			};
+			const cantidad = action.payload.quantity;
+			if (cantidad > 1) {
+				return {
+					...state,
+					cart: state.cart.map((product) => {
+						if (product.id === action.payload.id) {
+							return {
+								...product,
+								quantity: product.quantity - 1,
+								priceTotal: product.priceTotal - product.price
+							};
+						}
+					})
+				};
+			} else {
+				return {
+					...state,
+					cart: state.cart.filter((item) => item.id !== action.payload.id)
+				};
+			}
+
 		default:
 			return state;
 	}

@@ -33,8 +33,13 @@ const Product = ({ textBotton, product, handleAction }) => {
 						{product.title}
 					</Typography>
 					<Typography variant="body2">{product.description}</Typography>
-					<Typography variant="body2">{product.price}</Typography>
-					{product.quantity ? <Typography variant="body2">Cantidad: {product.quantity}</Typography> : null}
+					<Typography variant="body2">precio unidad: {product.price}</Typography>
+					{product.quantity ? (
+						<div>
+							<Typography variant="body2">Cantidad: {product.quantity}</Typography>
+							<Typography variant="body2">precio total:{product.priceTotal}</Typography>
+						</div>
+					) : null}
 				</CardContent>
 				<Button variant="contained" onClick={handleAction(product)}>
 					{textBotton}
